@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.apesource.shop.dao.ModelDao">
+    <resultMap id="model1" type="com.apesource.shop.pojo.Model">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"/>
+        <collection property="sizes" ofType="com.apesource.shop.pojo.Size" column="mid">
+            <id column="sid" property="sid"/>
+            <result column="mid" property="mid"/>
+            <result column="sname" property="sname"/>
+        </collection>
+
+    </resultMap>
+
+    <select id="seleteByid" resultMap="model1" parameterType="com.apesource.shop.pojo.Model">
+        SELECT model.*,`size`.*  FROM model,`size` WHERE model.id=`size`.mid and model.id=#{id}
+    </select>
+
+
+    <select id="seleteModels" resultMap="model1" parameterType="com.apesource.shop.pojo.Model">
+        SELECT model.id,model.name,`size`.sid,`size`.sname,`size`.mid FROM model,`size` WHERE model.id=`size`.mid
+        <if test=" null !=name and name!=''">
+            and `name`=#{name}
+        </if>
+        limit #{page},#{pagesize}
+    </select>
+
+</mapper>   
