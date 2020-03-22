@@ -26,6 +26,7 @@ public class ContentCategoryController {
 //        PageInfo<ContentCategory> pi = new PageInfo<ContentCategory>(result);
         return result;
     }
+    
 
     @RequestMapping("/findcontent1")
     public List<ContentCategory> selectContentCategory1(@RequestBody Map<String,String> map){
