@@ -36,6 +36,5 @@ public class SellerController {
     public int countSeller(){
         int i = sellerService.countSeller();
         return i;
-        
     }
 }
