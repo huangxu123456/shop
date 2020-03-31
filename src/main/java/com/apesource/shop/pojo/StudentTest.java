@@ -32,7 +32,4 @@ public class StudentTest {
 		this.name = name;
 		this.age = age;
 	}
-	
-	
-
 }
