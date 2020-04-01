@@ -40,4 +40,12 @@ public class StudentTest {
 		this.name = name;
 		this.age = age;
 	}
+	@Override
+	public String toString() {
+		return "StudentTest [id=" + id + ", name=" + name + ", age=" + age + ", address=" + address + ", getId()="
+				+ getId() + ", getAddress()=" + getAddress() + ", getName()=" + getName() + ", getAge()=" + getAge()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+	
 }
