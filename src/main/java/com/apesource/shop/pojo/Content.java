@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Content implements Serializable{
     private int id;
+    
     private int categoryId;
     private String title;
     private String url;
