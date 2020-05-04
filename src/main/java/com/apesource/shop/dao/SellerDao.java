@@ -10,7 +10,8 @@ import java.util.List;
 
 public interface SellerDao {
 
-    @SelectProvider(type = SqlUtils.class,method = "seleteseller")
+    //@SelectProvider(type = SqlUtils.class,method = "seleteseller")
+    //@Select("select * from seller")
      List<Seller> seleteSeller(Seller seller);
 
     @Update("UPDATE seller set `status`=#{status} where seller_id=#{sellerId}")

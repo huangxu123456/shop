@@ -4,7 +4,7 @@ import com.apesource.shop.pojo.Model;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
-
+@Mapper
 public interface ModelDao {
 
     @Insert("INSERT into model (`name`) VALUES(#{name})")
@@ -17,7 +17,7 @@ public interface ModelDao {
     @Update("UPDATE model set `name`=#{name} where id=#{id}")
     int updateModel(Model model);
 
-    //@SelectProvider(type = SqlUtils.class,method = "seleteModels")
+    @SelectProvider(type = SqlUtils.class,method = "seleteModels")
     List<Model> seleteModels(Model model);
 
 

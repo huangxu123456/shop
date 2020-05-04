@@ -1,7 +1,9 @@
 package com.apesource.shop.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.apesource.shop.pojo.Seller;
 import com.apesource.shop.service.base.ISellerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@Slf4j
 public class SellerController {
     @Autowired
     ISellerService sellerService;
@@ -20,6 +23,8 @@ public class SellerController {
         seller.setPage((seller.getPage()-1)*5);
         List<Seller> sellers = sellerService.seleteSeller(seller);
         System.out.println(sellers);
+        String s = JSON.toJSONString(sellers);
+        log.info("==============================:{}",s);
         return sellers;
     }
 
