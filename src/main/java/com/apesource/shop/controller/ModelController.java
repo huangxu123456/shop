@@ -80,11 +80,11 @@ public class ModelController {
        return insertsizes;
    }
 
-     @RequestMapping("/selectmodelbyid")
+   @RequestMapping("/selectmodelbyid")
    public Model selectmodelbyid(@RequestBody Model model){
         // System.out.println(model);
          Model model1 = modelService.seleteByid(model);
-        // System.out.println(model1);
+        System.out.println(model1);
          return model1;
      }
 
